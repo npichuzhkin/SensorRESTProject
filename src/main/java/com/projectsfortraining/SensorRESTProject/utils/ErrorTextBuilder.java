@@ -12,9 +12,9 @@ public class ErrorTextBuilder {
 
         for (FieldError fieldError: errorFields) {
             errors
-                    .append("В поле").append(fieldError.getField())
-                    .append("ошибка - ").append(fieldError.getDefaultMessage())
-                    .append(";\n");
+                    .append("В поле ").append(fieldError.getField())
+                    .append(" ошибка - ").append(fieldError.getDefaultMessage())
+                    .append("; ");
         }
         return errors.toString();
     }

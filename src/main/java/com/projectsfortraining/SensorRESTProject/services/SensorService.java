@@ -2,11 +2,13 @@ package com.projectsfortraining.SensorRESTProject.services;
 
 import com.projectsfortraining.SensorRESTProject.models.Sensor;
 import com.projectsfortraining.SensorRESTProject.repositories.SensorRepository;
+import com.projectsfortraining.SensorRESTProject.utils.exceptions.SensorNotExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -21,6 +23,7 @@ public class SensorService {
     public List<Sensor> findAll(){
         return sensorRepository.findAll();
     }
+
 
     public List<Sensor> findByName(String name){
         return sensorRepository.findByName(name);

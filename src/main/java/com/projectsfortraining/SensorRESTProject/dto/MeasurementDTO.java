@@ -10,15 +10,13 @@ import java.time.LocalDateTime;
 
 @Data
 public class MeasurementDTO {
-    @NotEmpty(message = "Измерение должно иметь информацию о сенсоре")
-    private Sensor sensor;
 
-    @NotEmpty(message = "Температура воздуха (value) должна быть заполнена")
+    private SensorDTO sensor;
+
     @Min(value = -100, message = "Минимальная температура: -100")
     @Max(value = 100, message = "Максимальная температура: 100")
-    private boolean value;
+    private double value;
 
-    @NotEmpty(message = "Поле raining должно быть заполнено значением true или false")
     private boolean raining;
 
     private LocalDateTime measuredAt;

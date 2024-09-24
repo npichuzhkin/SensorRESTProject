@@ -1,6 +1,7 @@
 package com.projectsfortraining.SensorRESTProject.services;
 
 import com.projectsfortraining.SensorRESTProject.models.Measurement;
+import com.projectsfortraining.SensorRESTProject.models.Sensor;
 import com.projectsfortraining.SensorRESTProject.repositories.MeasurementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ public class MeasurementService {
     }
 
     public int countRainyDays(){
-        return measurementRepository.findMeasurementsByRainingTrue();
+        List<Measurement> measurements = measurementRepository.findMeasurementsByRainingTrue();
+        return measurements.size();
     }
 }
